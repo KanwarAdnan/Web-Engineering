@@ -52,8 +52,8 @@
                 status.innerHTML = "Enter Email!"
                 email.focus();
             }
-            else if (password.value ==""){
-                status.innerHTML = "Enter Password!"
+            else if (password.value =="" || password.value.length < 7){
+                status.innerHTML = "Enter a valid Password!";
                 password.focus();
             }
             else {
