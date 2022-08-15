@@ -6,21 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 </head>
+
 <body>
     <div class="divLogin">
-        <form>
-            <table>
-                <th colspan="2">WELCOME BACK</th>
-                <tr>
-                    <td>Email : </td>
-                    <td><input type="text" placeholder="Enter your email" id="entryEmail" oninput="removeStatus()" autofocus></td>
-                </tr>
-                <tr>
-                    <td>Password : </td>
-                    <td><input type="password" placeholder="Enter your password" id="entryPassword" oninput="removeStatus()"></td>
-                </tr>
-            </table>
-        </form>
+
+        <table>
+            <th colspan="2">WELCOME BACK</th>
+            <tr>
+                <td>Email : </td>
+                <td><input type="text" placeholder="Enter your email" id="entryEmail" oninput="removeStatus()" autofocus></td>
+            </tr>
+            <tr>
+                <td>Password : </td>
+                <td><input type="password" placeholder="Enter your password" id="entryPassword" oninput="removeStatus()"></td>
+            </tr>
+        </table>
     
         <button id="btnLogin" onclick="validate()">Login</button>                
         <label id="lblStatus"></label>
@@ -49,7 +49,7 @@
             var password =  document.querySelector("#entryPassword");
             var status =  document.querySelector("#lblStatus");
             if (email.value ==""){
-                status.innerHTML = "Enter Email!"
+                status.innerHTML = "Enter Email!";
                 email.focus();
             }
             else if (password.value =="" || password.value.length < 7){
