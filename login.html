@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <div class="divLogin">
+        <form>
+            <table>
+                <th colspan="2">WELCOME BACK</th>
+                <tr>
+                    <td>Email : </td>
+                    <td><input type="text" placeholder="Enter your email" id="entryEmail" oninput="removeStatus()"></td>
+                </tr>
+                <tr>
+                    <td>Password : </td>
+                    <td><input type="password" placeholder="Enter your password" id="entryPassword" oninput="removeStatus()"></td>
+                </tr>
+            </table>
+        </form>
+    
+        <button id="btnLogin" onclick="validate()">Login</button>                
+        <label id="lblStatus"></label>
+    
+    </div>
+
+    <!-- CSS -->
+    <style>
+    .divLogin{
+        display: inline-block;
+    }
+    #btnLogin{
+        margin: 2px 1px;
+        width: 99%;
+    }
+    </style>
+
+    <!-- Script -->
+    <script>
+        function removeStatus(){
+            var status =  document.querySelector("#lblStatus");
+            status.innerHTML = "";
+        }
+        function validate(){
+            var email =  document.querySelector("#entryEmail");
+            var password =  document.querySelector("#entryPassword");
+            var status =  document.querySelector("#lblStatus");
+            if (email.value ==""){
+                status.innerHTML = "Enter Email!"
+                email.focus();
+            }
+            else if (password.value ==""){
+                status.innerHTML = "Enter Password!"
+                password.focus();
+            }
+            else {
+                alert("You've been logged in");
+                email.value = "";
+                password.value = "";
+                email.focus();
+            }
+        }        
+    </script>
+
+</body>
+</html>
